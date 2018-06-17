@@ -34,7 +34,7 @@ export function getLanes(req, res) {
 }
 
 export function deleteLane(req, res) {
-// _id vs id, id vs laneId
+// _id vs id, id vs laneId vs cuid?
   Note.deleteMany({ id: req.params.laneId }, (err) => {
     if (err) {
       res.status(500).send(err);
@@ -53,7 +53,7 @@ export function deleteLane(req, res) {
 }
 
 export function editLaneName(req, res) {
-  Lane.update({ cuid: req.params.laneId }, { name: req.body.name }).exec((err, name) => {
+  Lane.update({ id: req.params.laneId }, { name: req.body.name }).exec((err, name) => {
     if (err) {
       res.status(500).send(err);
     }
