@@ -44,3 +44,12 @@ export function deleteNote(req, res) {
     });
   });
 }
+
+export function editNote(req, res) {
+  Note.update({ id: req.params.noteId }, { task: req.body.task }).exec((err, task) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ task });
+  });
+}
