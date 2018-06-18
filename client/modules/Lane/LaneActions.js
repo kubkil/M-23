@@ -21,6 +21,14 @@ export function createLane(lane) {
   };
 }
 
+export function createLaneRequest(lane) {
+  return (dispatch) => {
+    return callApi('lanes', 'post', lane).then(res => {
+      dispatch(createLane(res));
+    });
+  };
+}
+
 export function updateLane(lane) {
   return {
     type: UPDATE_LANE,
