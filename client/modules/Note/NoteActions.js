@@ -32,7 +32,9 @@ export function updateNote(note) {
 
 export function updateNoteRequest(note) {
   return (dispatch) => {
-    return callApi(`notes/${note.id}`, 'put', note).then(() => dispatch(updateNote(note)));
+    return callApi(`notes/${note.id}`, 'put', note).then(() => {
+      dispatch(updateNote(note));
+    });
   };
 }
 
@@ -46,7 +48,9 @@ export function deleteNote(noteId, laneId) {
 
 export function deleteNoteRequest(noteId, laneId) {
   return (dispatch) => {
-    return callApi(`notes/${noteId}`, 'delete', { noteId, laneId }).then(() => dispatch(deleteNote(noteId, laneId)));
+    return callApi(`notes/${noteId}`, 'delete', { noteId, laneId }).then(() => {
+      dispatch(deleteNote(noteId, laneId));
+    });
   };
 }
 
