@@ -1,5 +1,3 @@
-import uuid from 'uuid';
-
 // Export Constants
 export const CREATE_NOTE = 'CREATE_NOTE';
 export const UPDATE_NOTE = 'UPDATE_NOTE';
@@ -11,10 +9,7 @@ export function createNote(note, laneId) {
   return {
     type: CREATE_NOTE,
     laneId,
-    note: {
-      id: uuid(),
-      ...note,
-    },
+    note,
   };
 }
 
