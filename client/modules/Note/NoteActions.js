@@ -30,6 +30,12 @@ export function updateNote(note) {
   };
 }
 
+export function updateNoteRequest(note) {
+  return (dispatch) => {
+    return callApi(`notes/${note.id}`, 'put', note).then(() => dispatch(updateNote(note)));
+  };
+}
+
 export function deleteNote(noteId, laneId) {
   return {
     type: DELETE_NOTE,
