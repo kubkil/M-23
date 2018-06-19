@@ -19,7 +19,6 @@ const Lane = (props) => {
           editing={lane.editing}
           value={lane.name}
           onValueClick={() => editLane(lane.id)}
-
           onUpdate={name => updateLane({ ...lane, name, editing: false })}
         />
         <div className={styles.LaneDelete}>
