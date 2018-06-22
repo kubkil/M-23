@@ -65,6 +65,6 @@ export function createNotes(notesData) {
 export function editNote(noteId) {
   return {
     type: EDIT_NOTE,
-    noteId,
+    id: noteId,
   };
 }
