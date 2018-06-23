@@ -1,10 +1,13 @@
 /* Lane styles */
-.AddLane {
+.Lanes {
   color: blue;
+  display: flex;
 }
 
 .Lane {
   color: blue;
+  border: 1px solid black;
+  margin: 0 1rem;
 }
 
 .LaneHeader {
@@ -20,9 +23,5 @@
 }
 
 .LaneDelete {
-  color: blue;
-}
-
-.Lanes {
   color: blue;
 }
