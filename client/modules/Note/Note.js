@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
-import { DragSource } from 'react-dnd';
+import { DragSource, DropTarget } from 'react-dnd';
+import { compose } from 'redux';
 import ItemTypes from '../Kanban/itemTypes';
 import styles from './Note.css';
 
