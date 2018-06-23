@@ -1,1 +1,10 @@
 /* Kanban styles */
+
+.kanban {
+  text-align: center;
+}
+
+.AddLane {
+  color: blue;
+  margin-bottom: 2rem;
+}
