@@ -26,13 +26,6 @@ class Note extends React.Component {
   }
 }
 
-Note.propTypes = {
-  children: PropTypes.any,
-  connectDragSource: PropTypes.any,
-  isDragging: PropTypes.any,
-  editing: PropTypes.any,
-};
-
 const noteSource = {
   beginDrag(props) {
     return {
@@ -64,8 +57,8 @@ Note.propTypes = {
 
 export default compose(
   DragSource(ItemTypes.NOTE, noteSource, (connect, monitor) => ({
-  connectDragSource: connect.dragSource(),
-  isDragging: monitor.isDragging()
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
   })),
   DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
     connectDropTarget: connect.dropTarget()
