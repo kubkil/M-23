@@ -27,6 +27,9 @@ class Note extends React.Component {
 
 Note.propTypes = {
   children: PropTypes.any,
+  connectDragSource: PropTypes.any,
+  isDragging: PropTypes.any,
+  editing: PropTypes.any,
 };
 
 const noteSource = {
