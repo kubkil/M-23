@@ -45,7 +45,14 @@ const noteSource = {
   }
 };
 
-export default DragSource(ItemTypes.NOTE, noteSource, (connect, monitor) => ({
+
+Note.propTypes = {
+  children: PropTypes.any,
+  connectDragSource: PropTypes.any,
+  isDragging: PropTypes.any,
+  editing: PropTypes.any,
+};
+
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging()
 }))(Note);
