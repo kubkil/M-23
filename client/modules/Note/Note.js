@@ -53,6 +53,12 @@ Note.propTypes = {
   editing: PropTypes.any,
 };
 
+export default compose(
+  DragSource(ItemTypes.NOTE, noteSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging()
-}))(Note);
+  })),
+  DropTarget(ItemTypes.NOTE, noteTarget, (connect) => ({
+    connectDropTarget: connect.dropTarget()
+  }))
+)(Note);
