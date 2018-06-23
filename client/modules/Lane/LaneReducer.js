@@ -5,6 +5,15 @@ import omit from 'lodash/omit';
 
 const initialState = {};
 
+function moveNotes(array, sourceNoteId, targetNoteId) {
+  const sourceIndex = array.indexOf(sourceNoteId);
+  const targetIndex = array.indexOf(targetNoteId);
+  const arrayCopy = [...array];
+
+  arrayCopy.splice(targetIndex, 0, arrayCopy.splice(sourceIndex, 1)[0]);
+  return arrayCopy;
+}
+
 export default function lanes(state = initialState, action) {
   switch (action.type) {
     case CREATE_LANE:
