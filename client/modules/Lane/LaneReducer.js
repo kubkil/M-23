@@ -1,5 +1,5 @@
 import { CREATE_LANE, CREATE_LANES, UPDATE_LANE, DELETE_LANE, EDIT_LANE } from './LaneActions';
-import { DELETE_NOTE, CREATE_NOTE } from '../Note/NoteActions';
+import { DELETE_NOTE, CREATE_NOTE, MOVE_WITHIN_LANE } from '../Note/NoteActions';
 
 import omit from 'lodash/omit';
 
