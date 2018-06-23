@@ -12,6 +12,20 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
+const noteTarget = {
+  hover(targetProps, monitor) {
+    const sourceProps = monitor.getItem();
+    const { id: noteId, laneId: sourceLaneId } = sourceProps;
+
+    if (!targetProps.lane.notes.length) {
+      targetProps.moveBetweenLanes(
+        targetProps.lane.id,
+        noteId,
+        sourceLaneId,
+      );
+    }
+  },
+};
 const mapDispatchToProps = {
   editLane,
   deleteLane: deleteLaneRequest,
