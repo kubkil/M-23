@@ -3,8 +3,27 @@ import { DragSource } from 'react-dnd';
 import ItemTypes from '../Kanban/itemTypes';
 import styles from './Note.css';
 
-const Note = props =>
-  <li className={styles.Note}>{props.children}</li>;
+class Note extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+  }
+  render() {
+    const { connectDragSource, isDragging,
+      editing, children } = this.props;
+
+    const dragSource = editing ? a => a : connectDragSource;
+
+    return dragSource(
+      <li
+        className={styles.Note}
+        style={{
+          opacity: isDragging ? 0 : 1
+        }}
+      >{children}</li>
+    );
+  }
+}
 
 Note.propTypes = {
   children: PropTypes.any,
