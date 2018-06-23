@@ -21,3 +21,8 @@ const noteSource = {
     return props.id === monitor.getItem().id;
   }
 };
+
+export default DragSource(ItemTypes.NOTE, noteSource, (connect, monitor) => ({
+  connectDragSource: connect.dragSource(),
+  isDragging: monitor.isDragging()
+}))(Note);
