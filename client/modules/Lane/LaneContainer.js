@@ -2,6 +2,9 @@ import { connect } from 'react-redux';
 import Lane from './Lane';
 import { editLane, deleteLaneRequest, updateLaneRequest } from './LaneActions';
 import { createNoteRequest } from '../Note/NoteActions';
+import { compose } from 'redux';
+import { DropTarget } from 'react-dnd';
+import ItemTypes from '../Kanban/itemTypes';
 
 const mapStateToProps = (state, ownProps) => {
   return {
