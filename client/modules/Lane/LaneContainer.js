@@ -26,6 +26,7 @@ const noteTarget = {
     }
   },
 };
+
 const mapDispatchToProps = {
   editLane,
   deleteLane: deleteLaneRequest,
@@ -33,7 +34,9 @@ const mapDispatchToProps = {
   addNote: createNoteRequest,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  DropTarget(ItemTypes.NOTE, noteTarget, (dragConnect) => ({
+    connectDropTarget: dragConnect.dropTarget()
+  }))
 )(Lane);
