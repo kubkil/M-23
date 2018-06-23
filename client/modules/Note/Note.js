@@ -10,4 +10,14 @@ Note.propTypes = {
   children: PropTypes.any,
 };
 
-export default Note;
+const noteSource = {
+  beginDrag(props) {
+    return {
+      id: props.id,
+      laneId: props.laneId,
+    };
+  },
+  isDragging(props, monitor) {
+    return props.id === monitor.getItem().id;
+  }
+};
