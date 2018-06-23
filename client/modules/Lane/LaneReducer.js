@@ -37,6 +37,13 @@ export default function lanes(state = initialState, action) {
       return omit(state, action.laneId);
     }
 
+    case MOVE_WITHIN_LANE: {
+      const newLane = { ...state[action.laneId] };
+      newLane.notes = moveNotes(newLane.notes, action.sourceId, action.targetId);
+
+      return { ...state, [action.laneId]: newLane };
+    }
+
     default:
       return state;
   }
