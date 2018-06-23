@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import { DragSource } from 'react-dnd';
+import ItemTypes from '../Kanban/itemTypes';
 import styles from './Note.css';
 
 const Note = props =>
