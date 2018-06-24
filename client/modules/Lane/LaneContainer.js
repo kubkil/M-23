@@ -38,6 +38,6 @@ const mapDispatchToProps = {
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   DropTarget(ItemTypes.NOTE, noteTarget, (dragConnect) => ({
-    connectDropTarget: dragConnect.dropTarget()
+    connectDropTarget: dragConnect.dropTarget(),
   }))
 )(Lane);
