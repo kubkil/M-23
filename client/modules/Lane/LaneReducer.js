@@ -58,8 +58,9 @@ export default function lanes(state = initialState, action) {
       targetLane.notes = [...targetLane.notes, action.noteId];
 
       const sourceLane = { ...state[action.sourceLaneId] };
-      sourceLane.notes = sourceLane.notes.filter(noteId => noteId !== action.noteId);
-
+      if (action.targetLaneId !== action.sourceLaneId) {
+        sourceLane.notes = sourceLane.notes.filter(noteId => noteId !== action.noteId);
+      }
       return { ...state, [action.targetLaneId]: targetLane, [action.sourceLaneId]: sourceLane };
     }
 
