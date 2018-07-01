@@ -9,6 +9,7 @@ const Notes = ({ notes, laneId, editNote, updateNote, deleteNote, moveWithinLane
       id={note.id}
       key={note.id}
       moveWithinLane={moveWithinLane}
+      editing={note.editing}
       laneId={laneId}
     >
       <Edit
@@ -29,6 +30,7 @@ const Notes = ({ notes, laneId, editNote, updateNote, deleteNote, moveWithinLane
 Notes.propTypes = {
   deleteNote: PropTypes.func,
   updateNote: PropTypes.func,
+  moveWithinLane: PropTypes.func,
   laneId: PropTypes.string,
   editNote: PropTypes.func,
   notes: PropTypes.array,
